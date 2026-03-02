@@ -87,10 +87,10 @@ while True:
 
     # Output error message / success message
     if Age < 12:
-        print(f"{name} is too young")
+        print(f"{name} is too young for this movie")
         continue
     elif Age > 120:
-        print(f"{name} is too old")
+        print(f"{name} is too old for this movie")
         continue
     else:
         pass
