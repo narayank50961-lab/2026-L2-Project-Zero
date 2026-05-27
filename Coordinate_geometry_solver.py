@@ -40,20 +40,22 @@ def yes_no_check(question):
             print("Please enter yes (y) or no (n) . \n")
 
 def instructions():
-    print(make_statement("instructions", "🍿"))
+    print(make_statement("instructions", "📐"))
 
     print(''' 
+# Heading
 
-For each ticket holder enter ...
-- How many questions
-- Get coordinates
+# Ask user if they want instructions
 
-The program will allow usesrs to  (and the profit)
+# How many questions / infinite mode
 
-Once you have either sold all of the tickets or entered the exit code ('xxx'), 
-the program will display the ticket sales
-information and write the data to a text file
+# Start loop here!
 
+# Ask what they need to find?
+
+# Ask for coordinates
+
+# Do the calculation and output the answer
 ''')
 
 def not_blank(question):
@@ -103,6 +105,27 @@ def num_check(question, num_type="float", exit_code=None):
 def round_up(amount, round_val):
     """Rounds amount to desired hole number"""
     return int(math.ceil(amount / round_val)) * round_val
+
+def get_distance(x1, y1, x2, y2):
+    return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+def find_midpoint(x1, y1, x2, y2):
+    mid_x = (x1 + x2) / 2
+    mid_y = (y1 + y2) / 2
+    return (mid_x, mid_y)
+
+def calculate_gradient(point1, point2):
+    x1, y1 = point1
+    x2, y2 = point2
+
+    # Check if the line is vertical to avoid division by zero
+    if x2 == x1:
+        raise ValueError("Gradient is undefined (vertical line).")
+
+    gradient = (y2 - y1) / (x2 - x1)
+    return gradient
+
+# main routine goes here
 
 # Heading
 
